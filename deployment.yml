@@ -1,29 +1,16 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: api-gateway
-spec:
-  rules:
-  - host: zuul.microservices.com
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: api-gateway
-          servicePort: 9000
----
 kind: Service
 apiVersion: v1
 metadata:
   name: api-gateway
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: spring-cloud-zuul
   ports:
   - protocol: TCP
     port: 9000
     targetPort: 9000
+    nodePort: 32001
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
