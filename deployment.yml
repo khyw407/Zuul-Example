@@ -30,7 +30,6 @@ spec:
         version: latest
     spec:
       hostname: zuul
-      subdomain: zuul
       containers:
       - name: spring-cloud-zuul
         image: 192.168.0.8:5000/api-gateway:latest
