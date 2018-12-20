@@ -2,7 +2,7 @@ package com.test.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /*
@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  * 				  @EnableEurekaClient 어노테이션은 Eureka Client로 서비스의 등록과 탐색을 활성화한다.
  * 				  @EnalbeZuulProxy 어노테이션은 zuul 서버(Api gateway)로 동작할 수 있게 활성화한다.
  */
-@EnableEurekaClient
+@EnableDiscoveryClient
 @EnableZuulProxy
 @SpringBootApplication
 public class ZuulApplication {
